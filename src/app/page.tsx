@@ -1,103 +1,112 @@
+// "use client"
+import About from "@/components/About";
+import Contact from "@/components/Contact";
+import Projects from "@/components/Projects";
+import { getClient } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
+import { HOME_QUERY } from "@/sanity/lib/queries";
 import Image from "next/image";
+import { useState, useEffect } from "react";
+import { IoDocumentTextOutline } from "react-icons/io5";
 
-export default function Home() {
+export const revalidate = 3600;
+
+async function getData() {
+  const client = getClient();
+  const data = await client.fetch(HOME_QUERY);
+  return data;
+}
+
+export default async function  Home() {
+  const {profile} = await getData();
+  console.log("Sanity data: ", profile)
+
+  // const titles = ["Software Engineer", "Full-Stack Developer", "Data Analyst"];
+  // const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentTitleIndex((prevIndex) => (prevIndex +1) % titles.length);
+  //   }, 2000);
+  //   return()=>clearInterval(interval);
+  // }, []);
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    // Main
+    <main className="min-h-screen bg-gradient-to-br from-green-200 via-gray-300 to-gray-400 pt-24">
+      <div className="px-4 py-4">
+        <section className="w-full bg-white/30 backdrop-blur-md p-4 rounded-2xl flex flex-row justify-between fixed top-0 left-0 z-50">
+        {/* Portfolio */}
+          <h1 className="text-4xl font-bold mb-4">Portfolio</h1>
+          {/* Top Nav Bar */}
+          <div className="flex flex-row space-x-4 text-2xl font-bold p-4">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </section>
+      </div>
+      <div className="w-full flex flex-row p-4">
+        {/* Image */}
+        <div id="home" className="w-full flex justify-center">
+          <Image
+            src={`${profile.ProfilePic}`}
+            alt="Profile Picture"
+            width={400}
+            height={400}
+            className="rounded-full aspect-square"
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className=" bg-white/30 backdrop-blur-md p-4 rounded-2xl flex-col h-full">
+        {/* Summary */}
+          <div>
+            <p className="flex justify-baseline text-4xl font-bold mb-8">Hello,<br/> I am {profile.titleName}</p>
+            <p className="flex justify-baseline text-4xl font-bold mb-8">
+              {/* {titles[currentTitleIndex]} */} Full-Stack Developer
+            </p>
+            <p className="flex justify-center text-lg text-gray-800 py-4">
+              Results-driven Software Engineer with over 2 years of experience in full-stack development, microservices architecture, and data processing. Proficient in Angular, Spring Boot, Kafka, Pentaho ETL, and Liquibase with a strong background in building and deploying APIs, responsive UI dashboards, and financial data integration solutions. Additionally skilled in machine learning models and built sample projects using PyTorch, Hugging Face, and SVD. Currently advancing skills in Data science and machine learning through a master’s program. Passionate about developing scalable, high-performance applications and optimizing data workflows.
+            </p>
+          </div>
+          <div className="mt-auto py-2">
+            <button className="text-2xl font-bold bg-gradient-to-br from-green-200 via-gray-400 to-gray-300 rounded-2xl max-w-full p-2 flex items-center space-x-2">
+              <span>Download Resume</span>
+              <IoDocumentTextOutline size={40}/>
+            </button>
+          </div>
+        </div>
+      </div>
+      {/* Skills */}
+      <p className="flex justify-baseline text-4xl font-bold p-4">
+        Skills and Tools
+      </p>
+      <div className="flex flex-row justify-between">
+        <div className="w-full max-w-4xl bg-white/30 backdrop-blur-md p-4 rounded-2xl flex flex-row">
+        <p className="text-lg text-gray-700">
+          Skills : Python, Java, HTML, CSS, React, Spring, Data Analysis, AWS
+        </p>
+        </div>
+        <div className="w-full max-w-4xl bg-white/30 backdrop-blur-md p-4 rounded-2xl flex flex-row">
+          <p className="text-lg text-gray-700">
+            Tools : Git Hub, vscode, tableau, Pentaho 
+          </p>
+        </div>
+      </div>
+
+      {/* About section */}
+      <div id="about" className="mt-8">
+        <About/>
+      </div>
+
+      {/* Projects section */}
+      <div id="projects" className="mt-8">
+        <Projects/>
+      </div>
+
+      {/* Contact section */}
+      <div id="contact" className="mt-8">
+        <Contact/>
+      </div>
+    </main>
   );
 }
