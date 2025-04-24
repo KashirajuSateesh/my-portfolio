@@ -7,7 +7,7 @@ import { SiLeetcode } from "react-icons/si";
 function Contact() {
   return (
     <div className="bg-white/30 backdrop-blur-md p-4 rounded-2xl">
-      <h2 className='text-4xl font-bold p-4'>Contact</h2>
+      {/* <h2 className='text-4xl font-bold p-4'>Contact</h2> */}
       <div className='text-lg text-gray-800 flex flex-row justify-evenly'>
         <p className='flex items-center space-x-2'>
           <FiPhoneCall />
