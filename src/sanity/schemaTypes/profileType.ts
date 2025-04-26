@@ -1,5 +1,5 @@
 import { IoPersonCircleOutline } from "react-icons/io5";
-import { defineField, defineType } from "sanity";
+import { defineArrayMember, defineField, defineType } from "sanity";
 
 
 export const profileType = defineType({
@@ -22,6 +22,32 @@ export const profileType = defineType({
         defineField({
             name: 'ProfilePic',
             type: 'image',
-        })
+        }),
+        defineField({
+            name: 'roles',
+            type: 'array',
+            title: 'Roles',
+            of: [
+                defineArrayMember({
+                    type: 'object',
+                    name: 'role',
+                    fields: [
+                        {type: 'string', name: 'myrole'},
+                    ],
+                })
+            ]
+        }),
+        defineField({
+            name: 'headQuote',
+            type: 'string',
+        }),
+        defineField({
+            name: 'resume',
+            type: 'file',
+            title: 'Resume',
+            options: {
+                accept: '.pdf',
+            },
+        }),
     ],
 });

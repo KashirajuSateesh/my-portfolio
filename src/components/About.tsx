@@ -31,19 +31,19 @@ function About() {
       <div className='flex flex-row justify-between'>
         <div className="backdrop-blur-md p-4 rounded-2xl w-full max-w-4xl">
           <h3 className='text-2xl font-bold p-4'>Education</h3>
-          <p className='mb-2'>
-            <h4 className='text-xl font-semibold px-4'>University of Alabama at Birmingham</h4>
-            <h4 className='text-xl font-light px-4'>Degree: Master of Science</h4>
-            <h4 className='text-xl font-light px-4'>Program: Data Science</h4>
-          </p>
+          <h3 className='mb-2'>
+            <p className='text-xl font-semibold px-4'>University of Alabama at Birmingham</p>
+            <p className='text-xl font-light px-4'>Degree: Master of Science</p>
+            <p className='text-xl font-light px-4'>Program: Data Science</p>
+          </h3>
         </div >
         <div className="backdrop-blur-md p-4 rounded-2xl w-full max-w-4xl">
           <h3 className='text-2xl font-bold p-4'>Achievements</h3>
-          <p className='mb-2'>
-            <h4 className='text-xl font-light px-4'>Oracle Certified Associate, Java SE 8 Programmer </h4>
-            <h4 className='text-xl font-light px-4'>National level winner of Virtusa Neural Hack - 2020 competition</h4>
-            <h4 className='text-xl font-light px-4'>Certificate of Completion in AWS Could Practitioner Essentials</h4>
-          </p>
+          <h3 className='mb-2'>
+            <p className='text-xl font-light px-4'>Oracle Certified Associate, Java SE 8 Programmer </p>
+            <p className='text-xl font-light px-4'>National level winner of Virtusa Neural Hack - 2020 competition</p>
+            <p className='text-xl font-light px-4'>Certificate of Completion in AWS Could Practitioner Essentials</p>
+          </h3>
         </div>
       </div>
     </div>
