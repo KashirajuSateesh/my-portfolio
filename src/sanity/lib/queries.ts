@@ -11,5 +11,9 @@ export const HOME_QUERY = groq`{
   "skills": *[_type == "skills"]{
     skill,
     "icon": icon.asset->url,
+  },
+  "tools": *[_type == "tools"]{
+    tool,
+    "icon": icon.asset->url,
   }
 }`;

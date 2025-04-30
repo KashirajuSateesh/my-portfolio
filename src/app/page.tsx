@@ -13,11 +13,12 @@ export const revalidate = 3600;
 async function getData() {
   const client = getClient();
   const data = await client.fetch(HOME_QUERY);
+  console.log(data.tools)
   return data;
 }
 
 export default async function  Home() {
-  const {profile, skills} = await getData();
+  const {profile, skills, tools} = await getData();
   return (
     // Main
     <main className="min-h-screen bg-gradient-to-br from-green-200 via-gray-300 to-gray-400 pt-24">
@@ -25,7 +26,7 @@ export default async function  Home() {
 
       <div><Profile profile={profile}/></div>
 
-      <div><Skills skills={skills}/></div>
+      <div><Skills skills={skills} tools={tools}/></div>
 
       {/* About section */}
       <div id="about" className="mt-8"><About/></div>
