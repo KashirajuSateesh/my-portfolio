@@ -24,6 +24,19 @@ export const profileType = defineType({
             type: 'image',
         }),
         defineField({
+            name: 'diffprofilepic',
+            title: 'DiffProfilePic',
+            type: 'array',
+            of: [
+                {
+                type: 'image',
+                options: {
+                    hotspot: true,
+                },
+                },
+            ],
+            }),
+        defineField({
             name: 'roles',
             type: 'array',
             title: 'Roles',
@@ -39,7 +52,7 @@ export const profileType = defineType({
         }),
         defineField({
             name: 'headQuote',
-            type: 'string',
+            type: 'text',
         }),
         defineField({
             name: 'resume',
@@ -48,6 +61,10 @@ export const profileType = defineType({
             options: {
                 accept: '.pdf',
             },
+        }),
+        defineField({
+            name: 'about',
+            type: 'text',
         }),
     ],
 });

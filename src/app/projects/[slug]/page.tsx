@@ -18,7 +18,6 @@ async function getData(slug: string) {
 export default async function Project({params}:{params: Promise<{slug: string}>}) {
   const {slug} = await params;
   const {project} = await getData(slug);
-  console.log(project)
 
   return (
     <div>

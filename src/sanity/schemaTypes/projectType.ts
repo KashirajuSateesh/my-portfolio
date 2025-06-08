@@ -6,11 +6,7 @@ export default {
   title: 'Project',
   type: 'document',
   fields: [
-    {
-      name: '_id',
-      title: 'ID',
-      type: 'string',
-    },
+    
     {
       name: 'title',
       title: 'Project Title',

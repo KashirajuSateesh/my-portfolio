@@ -1,0 +1,53 @@
+export default {
+  name: 'experience',
+  title: 'Experience',
+  type: 'document',
+  fields: [
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'role',
+        maxLength: 96,
+      },
+      validation: (Rule: any) => Rule.required(),
+    },
+    {
+      name: 'company',
+      title: 'Company',
+      type: 'string',
+    },
+    {
+      name: 'role',
+      title: 'Role / Title',
+      type: 'string',
+    },
+    {
+      name: 'country',
+      title: 'Country',
+      type: 'string',
+    },
+    {
+      name: 'state',
+      title: 'State',
+      type: 'string',
+    },
+    {
+      name: 'startDate',
+      title: 'Start Date',
+      type: 'date',
+      options: {
+        dateFormat: 'MM-YYYY',
+      },
+    },
+    {
+      name: 'endDate',
+      title: 'End Date',
+      type: 'date',
+      options: {
+        dateFormat: 'MM-YYYY',
+      },
+    },
+  ],
+}

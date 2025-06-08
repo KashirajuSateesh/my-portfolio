@@ -13,21 +13,31 @@ export const revalidate = 3600;
 async function getData() {
   const client = getClient();
   const data = await client.fetch(PROJECTS_QUERY);
-  console.log(data.project)
   return data;
 }
 
 export default async function Home() {
-  const {project} = await getData();
+  const {project, banner} = await getData();
+  console.log("Projects Page", banner)
   return (
 
     <div className="min-h-screen bg-gradient-to-br from-green-200 via-gray-300 to-gray-400 pt-24 px-6">
 
       <div><Navbar/></div>
 
-      <div className="mb-12 text-center">
-        <h1 className="text-4xl font-bold mb-2">Projects</h1>
-        <p className="text-gray-700">This is where you will get to know me better.</p>
+      <div
+        className="relative w-full h-[300px] flex items-center justify-center text-center"
+        style={{
+          backgroundImage: `url(${banner})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="bg-black/20 w-full h-full absolute top-0 left-0 z-0"></div>
+        <div className="relative z-10">
+          <h1 className="text-5xl font-bold">Projects</h1>
+          <p className="text-xl mt-2">This is where you will get to know me better.</p>
+        </div>
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -35,34 +45,6 @@ export default async function Home() {
           <ProjectCard key={proj._id} proj={proj} /> // ✅ Use component
         ))}
       </div>
-      
-      {/* <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {project.map((proj:any)=>(
-          <div>
-            <Link 
-              key={proj.id}
-              href={`/projects/${proj.slug?.current}`} 
-              className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
-                <div className='bg-white rounded-4xl'>
-                  {proj.imgUrl && (
-                    <Image
-                      src={proj.imgUrl}
-                      alt={proj.title}
-                      width={400}
-                      height={400}
-                      className="object-cover w-full h-60 rounded-4xl"
-                    />
-                  )}
-                  <div className="p-4">
-                    <h2 className="text-xl font-semibold text-gray-800 mb-2">{proj.title}</h2>
-                    <p className="text-sm text-gray-600 line-clamp-2">{proj.description}</p>
-                  </div>
-                </div>
-                
-            </Link>
-          </div>
-        ))}
-      </div> */}
     </div>
   )
 }

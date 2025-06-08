@@ -6,7 +6,6 @@ import ProjectCard from '@/components/ProjectCard'
 async function getData() {
   const client = getClient();
   const data = await client.fetch(PROJECTS_QUERY);
-  console.log(data);
   return data;
 }
 
