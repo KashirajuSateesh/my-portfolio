@@ -13,7 +13,7 @@ export const revalidate = 3600;
 async function getData() {
   const client = getClient();
   const data = await client.fetch(HOME_QUERY);
-  console.log(data.tools)
+  // console.log(data)
   return data;
 }
 

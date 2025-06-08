@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 function Navbar() {
   return (
@@ -8,10 +9,10 @@ function Navbar() {
             <h1 className="text-4xl font-bold mb-4">Portfolio</h1>
             {/* Top Nav Bar */}
             <div className="flex flex-row space-x-4 text-2xl font-bold p-4">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <a href="/#home">Home</a>
+            <a href="/#about">About</a>
+            <Link href="/projects">Projects</Link>
+            <a href="/#contact">Contact</a>
             </div>
         </section>
     </div>
