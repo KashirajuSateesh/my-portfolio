@@ -24,7 +24,7 @@ const ProjectCard = ({ proj }: { proj: Project }) => {
             alt={proj.title}
             width={400}
             height={400}
-            className="object-cover w-full h-60 rounded-4xl"
+            className="object-cover w-full h-60"
           />
         )}
         <div className="p-4">

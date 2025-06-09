@@ -21,7 +21,7 @@ export  function Skills({skills}: {skills: SkillType[]}) {
   return (
     <div>
         {/* Skills */}
-        <div className="w-full  bg-white/30 backdrop-blur-md p-4 rounded-2xl">
+        <div className="w-full  bg-white/30 backdrop-blur-md p-4 mt-4">
           <p className="flex justify-baseline text-4xl font-bold p-4">
           Skills
           </p>

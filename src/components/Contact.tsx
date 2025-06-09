@@ -15,7 +15,7 @@ interface FooterType {
 
 function Contact({ footer }: { footer: FooterType }) {
   return (
-    <footer className="bg-gradient-to-r from-gray-100 to-gray-300 text-gray-900 py-12 px-6 rounded-t-3xl mt-20 shadow-inner">
+    <footer className="bg-gradient-to-r from-gray-100 to-gray-300 text-gray-900 py-12 px-6  mt-20 shadow-inner">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold mb-2">Get in Touch</h2>
         <p className="text-lg text-gray-700 mb-8">
@@ -25,11 +25,15 @@ function Contact({ footer }: { footer: FooterType }) {
         <div className="flex flex-wrap justify-center gap-15 text-base">
           <div className="flex items-center gap-2">
             <FiPhoneCall className="text-xl" />
-            <span>{footer.Footer.contactNumber}</span>
+            <a href={`tel:${footer.Footer.contactNumber}`} className="hover:underline">
+              {footer.Footer.contactNumber}
+            </a>
           </div>
           <div className="flex items-center gap-2">
             <SiGmail className="text-xl" />
-            <span>{footer.Footer.mail}</span>
+            <a href={`mailto:${footer.Footer.mail}`} className="hover:underline">
+              {footer.Footer.mail}
+            </a>
           </div>
           {footer.Footer.linkedIn && (
             <a href={footer.Footer.linkedIn} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">

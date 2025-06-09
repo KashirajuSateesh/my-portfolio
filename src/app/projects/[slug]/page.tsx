@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { getClient } from "@/sanity/lib/client";
 import { PROJECT_QUERY } from "@/sanity/lib/queries";
@@ -140,7 +140,7 @@ export default async function Project({params}:{params: Promise<{slug: string}>}
         </div>
 
         {/* ✅ Contact Footer */}
-        <div className="mt-12 w-full">
+        <div className="w-full">
           <Contact footer={footer} />
         </div>
       </div>

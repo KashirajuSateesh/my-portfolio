@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import { IoDocumentTextOutline } from "react-icons/io5";
+import { MdOutlineFileDownload } from "react-icons/md";
 import Image from "next/image";
 
 import { useState, useEffect } from "react";
@@ -72,10 +73,10 @@ export default function Profile({profile}: {profile: ProfileType}) {
             <a 
               href={profile.Resume}
               download
-              className="inline-flex items-center space-x-2 text-2xl font-bold bg-gradient-to-br from-green-200 via-gray-400 to-gray-300 rounded-2xl max-w-full p-2"
+              className="inline-flex items-center space-x-4 text-2xl font-bold bg-gradient-to-br from-green-200 via-gray-400 to-gray-300 rounded-2xl max-w-full px-6 py-2"
             >
-              <span >Download Resume</span>
-              <IoDocumentTextOutline size={40}/>
+              <MdOutlineFileDownload size={40}/>
+              <span >Resume</span>
             </a>
           </div>
         </div>
