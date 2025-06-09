@@ -51,7 +51,7 @@ export default async function Project({params}:{params: Promise<{slug: string}>}
 
               {project?.Tech && Array.isArray(project.Tech) && (
                 <section>
-                  <h2 className="text-2xl font-semibold mb-2">Tech Stack</h2>
+                  <h2 className="text-2xl font-semibold mb-2">🔧 Tech Stack</h2>
                   <ul className="list-disc list-inside text-gray-700 space-y-1">
                     {project.Tech.map((tech: string, index: number) => (
                       <li key={index}>{tech}</li>
@@ -62,14 +62,14 @@ export default async function Project({params}:{params: Promise<{slug: string}>}
 
               {project?.objective && (
                 <section>
-                  <h2 className="text-2xl font-semibold mb-2">Objective</h2>
+                  <h2 className="text-2xl font-semibold mb-2">🎯 Objective</h2>
                   <p className="text-gray-800">{project.objective}</p>
                 </section>
               )}
 
               {project?.features && Array.isArray(project.features) && (
                 <section>
-                  <h2 className="text-2xl font-semibold mb-2">Features</h2>
+                  <h2 className="text-2xl font-semibold mb-2">🚀 Features</h2>
                   <ul className="list-disc list-inside space-y-1 text-gray-700">
                     {project.features.map((feature: string, index: number) => (
                       <li key={index}>{feature}</li>
@@ -80,28 +80,28 @@ export default async function Project({params}:{params: Promise<{slug: string}>}
 
               {project?.challenges && (
                 <section>
-                  <h2 className="text-2xl font-semibold mb-2">Challenges</h2>
+                  <h2 className="text-2xl font-semibold mb-2">🧠 Challenges</h2>
                   <p className="text-gray-800">{project.challenges}</p>
                 </section>
               )}
 
               {project?.learnings && (
                 <section>
-                  <h2 className="text-2xl font-semibold mb-2">Learnings</h2>
+                  <h2 className="text-2xl font-semibold mb-2">🧠 Learnings</h2>
                   <p className="text-gray-800">{project.learnings}</p>
                 </section>
               )}
 
               {project?.futureImprovements && (
                 <section>
-                  <h2 className="text-2xl font-semibold mb-2">Future Improvements</h2>
+                  <h2 className="text-2xl font-semibold mb-2">📘 Future Improvements</h2>
                   <p className="text-gray-800">{project.futureImprovements}</p>
                 </section>
               )}
 
               {project?.screenshots && Array.isArray(project.screenshots) && (
                 <section>
-                  <h2 className="text-2xl font-semibold mb-4">Screenshots</h2>
+                  <h2 className="text-2xl font-semibold mb-4">💡 Visual Walkthrough</h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {project.screenshots.map((url: string, index: number) => (
                       <img
