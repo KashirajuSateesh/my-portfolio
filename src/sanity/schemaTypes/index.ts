@@ -11,7 +11,8 @@ import projectType from './projectType'
 import educationType from './educationType'
 import experienceType from './experienceType'
 import certificateType from './certificateType'
+import footerType from './footerType'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [blockContentType, categoryType, postType, authorType, profileType, skillsType, toolsType, projectType, educationType, experienceType, certificateType],
+  types: [blockContentType, categoryType, postType, authorType, profileType, skillsType, toolsType, projectType, educationType, experienceType, certificateType, footerType],
 }

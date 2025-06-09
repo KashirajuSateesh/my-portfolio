@@ -5,6 +5,8 @@ import { PROJECT_QUERY } from "@/sanity/lib/queries";
 import { Params } from 'next/dist/server/request/params';
 import Navbar from '@/components/Navbar';
 import { features } from 'process';
+import Contact from '@/components/Contact';
+import { FOOTER_QUERY } from '@/sanity/lib/queries';
 
 
 export const revalidate = 3600;
@@ -12,19 +14,21 @@ export const revalidate = 3600;
 async function getData(slug: string) {
   const client = getClient();
   const data = await client.fetch(PROJECT_QUERY, {slug});
-  return data;
+  const footer = await client.fetch(FOOTER_QUERY);
+  return {...data, footer};
 }
 
 export default async function Project({params}:{params: Promise<{slug: string}>}) {
   const {slug} = await params;
-  const {project} = await getData(slug);
+  const {project, footer} = await getData(slug);
+  
 
   return (
     <div>
-        <div className="min-h-screen bg-gradient-to-br from-green-200 via-gray-300 to-gray-400 pt-24 px-4">
+        <div className="min-h-screen flex flex-col bg-gradient-to-br from-green-200 via-gray-300 to-gray-400">
             <Navbar/>
 
-            <div className="max-w-4xl mx-auto space-y-10">
+            <div className="max-w-4xl mx-auto w-full px-4 pt-24 flex-grow space-y-10">
               <div>
                 <h1 className="text-4xl font-bold mb-2">{project?.title}</h1>
                 <p className="text-gray-700 text-lg">{project?.shortdescription}</p>
@@ -133,6 +137,11 @@ export default async function Project({params}:{params: Promise<{slug: string}>}
                 )}
           </div>
         )}
+        </div>
+
+        {/* ✅ Contact Footer */}
+        <div className="mt-12 w-full">
+          <Contact footer={footer} />
         </div>
       </div>
     </div>

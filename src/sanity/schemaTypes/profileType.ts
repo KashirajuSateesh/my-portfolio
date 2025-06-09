@@ -65,6 +65,7 @@ export const profileType = defineType({
         defineField({
             name: 'about',
             type: 'text',
+            title: 'About'
         }),
     ],
 });

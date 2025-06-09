@@ -28,14 +28,14 @@ export default function Profile({profile}: {profile: ProfileType}) {
     }, [titles]);
   return (
     <div>
-        <div className="relative overflow-hidden w-full flex flex-row p-4">
+        <div className="relative overflow-hidden w-full flex flex-row p-4 gap-10">
           {/* Image */}
           <div id="home" className="w-full flex justify-center">
             <Image
               src={`${profile.ProfilePic}`}
               alt="Profile Picture"
-              width={400}
-              height={400}
+              width={450}
+              height={450}
               className="rounded-full aspect-square"
             />
           </div>

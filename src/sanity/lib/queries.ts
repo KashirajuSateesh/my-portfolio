@@ -89,3 +89,15 @@ export const CERTIFICATE_QUERY = groq`{
   "certificateImage": certificateImage.asset->url 
   }
 }`;
+
+export const FOOTER_QUERY = groq`{
+  "Footer": *[_type == "footer"][0]{
+  contactNumber,
+  mail,
+  gitProfile,
+  linkedIn,
+  leetcode,
+  instagram,
+  twitter
+  }
+}`;
