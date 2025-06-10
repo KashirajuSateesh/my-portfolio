@@ -14,30 +14,30 @@ function Navbar() {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex flex-row space-x-20 text-2xl font-bold pr-10">
-          <a
+          <Link
             href="/#home"
             className="hover:scale-110 transform transition-transform duration-300 hover:border-b-2 hover:border-black"
           >
             Home
-          </a>
-          <a
+          </Link>
+          <Link
             href="/#about"
             className="hover:scale-110 transform transition-transform duration-300 hover:border-b-2 hover:border-black"
           >
             About
-          </a>
+          </Link>
           <Link
             href="/projects"
             className="hover:scale-110 transform transition-transform duration-300 hover:border-b-2 hover:border-black"
           >
             Projects
           </Link>
-          <a
+          <Link
             href="/#contact"
             className="hover:scale-110 transform transition-transform duration-300 hover:border-b-2 hover:border-black"
           >
             Contact
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -51,10 +51,10 @@ function Navbar() {
       {/* Mobile Dropdown Menu */}
       {isOpen && (
         <div className="md:hidden mt-24 bg-white/90 backdrop-blur-md p-6 rounded-b-xl shadow-lg space-y-6 text-2xl font-semibold">
-          <a href="/#home" onClick={() => setIsOpen(false)} className="block hover:underline">Home</a>
-          <a href="/#about" onClick={() => setIsOpen(false)} className="block hover:underline">About</a>
+          <Link href="/#home" onClick={() => setIsOpen(false)} className="block hover:underline">Home</Link>
+          <Link href="/#about" onClick={() => setIsOpen(false)} className="block hover:underline">About</Link>
           <Link href="/projects" onClick={() => setIsOpen(false)} className="block hover:underline">Projects</Link>
-          <a href="/#contact" onClick={() => setIsOpen(false)} className="block hover:underline">Contact</a>
+          <Link href="/#contact" onClick={() => setIsOpen(false)} className="block hover:underline">Contact</Link>
         </div>
       )}
     </div>

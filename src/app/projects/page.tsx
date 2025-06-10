@@ -1,9 +1,6 @@
-import Link from 'next/link'
 import React from 'react'
-
 import { getClient } from "@/sanity/lib/client";
 import { PROJECTS_QUERY } from "@/sanity/lib/queries";
-import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import ProjectCard from '@/components/ProjectCard'
 import Contact from '@/components/Contact';

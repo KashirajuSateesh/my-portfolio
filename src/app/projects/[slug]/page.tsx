@@ -1,12 +1,9 @@
-import React, { useState } from 'react'
-
 import { getClient } from "@/sanity/lib/client";
 import { PROJECT_QUERY } from "@/sanity/lib/queries";
-import { Params } from 'next/dist/server/request/params';
 import Navbar from '@/components/Navbar';
-import { features } from 'process';
 import Contact from '@/components/Contact';
 import { FOOTER_QUERY } from '@/sanity/lib/queries';
+
 
 
 export const revalidate = 3600;

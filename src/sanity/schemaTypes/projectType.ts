@@ -1,5 +1,3 @@
-import { defineArrayMember } from "sanity";
-
 // src/sanity/schemaTypes/projectType.ts
 export default {
   name: 'project',
