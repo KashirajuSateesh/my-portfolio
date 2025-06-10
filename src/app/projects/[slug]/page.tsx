@@ -108,7 +108,7 @@ export default async function Project({params}:{params: Promise<{slug: string}>}
                         key={index}
                         src={url}
                         alt={`Screenshot ${index + 1}`}
-                        className="rounded shadow-md w-full"
+                        className="rounded shadow-md w-full transform transition-transform duration-300 hover:scale-105 hover:shadow-lg"
                       />
                     ))}
                   </div>

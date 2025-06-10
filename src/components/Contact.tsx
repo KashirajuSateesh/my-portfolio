@@ -13,7 +13,9 @@ interface FooterType {
   twitter: string | null;
 }
 
-function Contact({ footer }: { footer: FooterType }) {
+
+
+function Contact({ footer, profile }: { footer: FooterType }) {
   return (
     <footer className="bg-gradient-to-r from-gray-100 to-gray-300 text-gray-900 py-12 px-6  mt-20 shadow-inner">
       <div className="max-w-6xl mx-auto text-center">
@@ -66,6 +68,7 @@ function Contact({ footer }: { footer: FooterType }) {
             </a>
           )}
         </div>
+        {/* Resume Button */}
       </div>
     </footer>
   );
