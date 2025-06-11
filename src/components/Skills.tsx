@@ -22,9 +22,9 @@ export  function Skills({skills}: {skills: SkillType[]}) {
     <div>
         {/* Skills */}
         <div className="w-full  bg-white/30 backdrop-blur-md p-4 mt-4">
-          <p className="flex justify-baseline text-4xl font-bold p-4">
+          <h2 className="flex justify-baseline text-4xl font-bold p-4">
           Skills
-          </p>
+          </h2>
           <div className='relative w-full overflow-hidden'>
             <div ref={skillsRef} className="w-full flex justify-center gap-10">
               {

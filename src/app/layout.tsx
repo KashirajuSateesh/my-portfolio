@@ -4,16 +4,18 @@ import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  weight: ['300'],
+  subsets: ["latin-ext"],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  weight: ['500'],
   subsets: ["latin"],
 });
 const roboto = Roboto({
   subsets: ['latin'],
-  weight: ['300', '600'], // Choose weights you need
+  weight: ['300', '300'], // Choose weights you need
   variable: '--font-roboto', // Optional: for CSS variable usage
 });
 
