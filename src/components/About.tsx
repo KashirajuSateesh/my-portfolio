@@ -14,6 +14,35 @@ interface ProfileType {
   About: string;
 }
 
+interface EducationItem {
+  _id: string;
+  class: string;
+  college: string;
+  course: string;
+  endYear: number;
+  startYear: number;
+  slug?: object;
+}
+
+interface ExperienceItem {
+  _id: string;
+  company: string;
+  country: string;
+  endDate: string;
+  role: string;
+  startDate: string;
+  state: string;
+  slug?: object;
+}
+
+interface CertificateItem {
+  _id: string;
+  certificateImage: string | null;
+  certificateName: string;
+  firmName: string;
+  issueDate: string;
+}
+
 function About({
   profile,
   education,
@@ -21,15 +50,16 @@ function About({
   certificates,
 }: {
   profile: ProfileType;
-  education: { Education: any[] };
-  experience: { Experience: any[] };
-  certificates: { Certificate: any[] };
+  education: { Education: EducationItem[] };
+  experience: { Experience: ExperienceItem[] };
+  certificates: { Certificate: CertificateItem[] };
 }) {
   const [activeTab, setActiveTab] = useState<'education' | 'experience' | 'certificates'>('education');
   const [showFull, setShowFull] = useState(false);
 
   const aboutText = profile.About || '';
   const shortText = aboutText.slice(0, 1000) + (aboutText.length > 300 ? '...' : '');
+
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-green-200 via-gray-300 to-gray-400 pt-24 px-4">

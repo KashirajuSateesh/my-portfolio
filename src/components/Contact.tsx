@@ -4,24 +4,26 @@ import { FaLinkedin, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa6";
 import { SiLeetcode, SiGmail } from "react-icons/si";
 
 interface FooterType {
-  contactNumber: string;
-  mail: string;
-  gitProfile: string;
-  linkedIn: string;
-  leetcode: string | null;
-  instagram: string;
-  twitter: string | null;
+  Footer: {
+    contactNumber: string;
+    mail: string;
+    gitProfile: string;
+    linkedIn: string;
+    leetcode: string | null;
+    instagram: string;
+    twitter: string | null;
+  }
 }
 
 
 
-function Contact({ footer, profile }: { footer: FooterType }) {
+function Contact({ footer }: { footer: FooterType }) {
   return (
     <footer className="bg-gradient-to-r from-gray-100 to-gray-300 text-gray-900 py-12 px-6  mt-20 shadow-inner">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-2">Get in Touch</h2>
+        <h2 className="text-4xl font-bold mb-2">Let’s get in touch</h2>
         <p className="text-lg text-gray-700 mb-8">
-          Here are my profiles to know me more!
+          Check out my profiles and see what I’m up to
         </p>
 
         <div className="flex flex-wrap justify-center gap-15 text-base">

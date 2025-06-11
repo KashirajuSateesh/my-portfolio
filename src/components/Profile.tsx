@@ -14,7 +14,7 @@ interface ProfileType {
 
 export default function Profile({ profile }: { profile: ProfileType }) {
   const titles = profile.roles.map((role) => role.myrole);
-  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+  const [, setCurrentTitleIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {

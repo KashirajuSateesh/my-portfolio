@@ -1,4 +1,6 @@
-export default {
+import type { Rule } from 'sanity';
+
+const footerType = {
   name: 'footer',
   title: 'Footer',
   type: 'document',
@@ -17,7 +19,7 @@ export default {
       name: 'mail',
       title: 'Email Address',
       type: 'string',
-      validation: (Rule: any) => Rule.email(),
+      validation: (Rule: Rule) => Rule.email(),
     },
     {
       name: 'gitProfile',
@@ -46,3 +48,5 @@ export default {
     },
   ],
 }
+
+export default footerType;

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import gsap from "gsap";
 
 export function useCarouselAnimation(
-  ref: React.RefObject<HTMLDivElement>,
+  ref: React.RefObject<HTMLDivElement | null>,
   options: { duration: number; ease: string; repeat: number }
 ) {
   useEffect(() => {
@@ -15,13 +15,15 @@ export function useCarouselAnimation(
       el,
       { x: 0 },
       {
-        x: -totalWidth / 2, // Half if you duplicate content for seamless scroll
+        x: -totalWidth / 2,
         duration: options.duration,
         ease: options.ease,
         repeat: options.repeat,
       }
     );
 
-    return () => animation.kill(); // Clean up on unmount
+    return () => {
+      animation.kill();
+    };
   }, [ref, options]);
 }

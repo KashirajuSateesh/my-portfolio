@@ -1,4 +1,4 @@
-export default {
+const certificateType = {
   name: 'certificate',
   title: 'Certificate',
   type: 'document',
@@ -32,3 +32,5 @@ export default {
     },
   ],
 }
+
+export default certificateType;

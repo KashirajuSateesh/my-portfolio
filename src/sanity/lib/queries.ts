@@ -58,7 +58,6 @@ export const PROJECT_QUERY = groq`{
 export const EDUCATION_QUERY = groq`{
   "Education": *[_type == "education"] | order(startYear desc) {
     _id,
-    slug,
     class,
     course,
     college,
@@ -70,7 +69,6 @@ export const EDUCATION_QUERY = groq`{
 export const EXPERIENCE_QUERY = groq`{
   "Experience": *[_type == "experience"] | order(startDate desc) {
   _id,
-  slug,
   company,
   role,
   country,

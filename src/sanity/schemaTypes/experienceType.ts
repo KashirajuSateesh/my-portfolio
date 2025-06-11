@@ -1,18 +1,8 @@
-export default {
+const experienceType = {
   name: 'experience',
   title: 'Experience',
   type: 'document',
   fields: [
-    {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'role',
-        maxLength: 96,
-      },
-      validation: (Rule: any) => Rule.required(),
-    },
     {
       name: 'company',
       title: 'Company',
@@ -51,3 +41,5 @@ export default {
     },
   ],
 }
+
+export default experienceType;

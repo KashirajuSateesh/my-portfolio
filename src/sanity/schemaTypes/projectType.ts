@@ -1,5 +1,5 @@
 // src/sanity/schemaTypes/projectType.ts
-export default {
+const projectType = {
   name: 'project',
   title: 'Project',
   type: 'document',
@@ -99,3 +99,4 @@ export default {
   ],
 };
 
+export default projectType;

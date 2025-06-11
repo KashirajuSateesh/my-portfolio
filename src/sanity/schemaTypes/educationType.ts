@@ -1,18 +1,10 @@
-export default {
+import type { Rule } from 'sanity';
+
+const educationType = {
   name: 'education',
   title: 'Education',
   type: 'document',
   fields: [
-    {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'college',
-        maxLength: 96,
-      },
-      validation: (Rule: any) => Rule.required(),
-    },
     {
       name: 'class',
       title: 'Class / Degree',
@@ -32,13 +24,15 @@ export default {
       name: 'startYear',
       title: 'Start Year',
       type: 'number',
-      validation: (Rule: any) => Rule.min(1900).max(new Date().getFullYear()),
+      validation: (Rule: Rule) => Rule.min(1900).max(new Date().getFullYear()),
     },
     {
       name: 'endYear',
       title: 'End Year',
       type: 'number',
-      validation: (Rule: any) => Rule.min(1900).max(new Date().getFullYear() + 10),
+      validation: (Rule: Rule) => Rule.min(1900).max(new Date().getFullYear() + 10),
     },
   ],
 };
+
+export default educationType;
